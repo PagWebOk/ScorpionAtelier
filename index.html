@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Scorpion Atelier</title>
+<meta name="description" content="Scorpion Atelier — relojería artesanal de nicho. Relojes hechos a mano por un joyero de oficio: cajas de metal en bruto, diales dorados calados, numerales romanos y movimiento Miyota serie 8000.">
+<meta name="theme-color" content="#0d0a08">
+<meta property="og:title" content="Scorpion Atelier · Relojería Artesanal de Nicho">
+<meta property="og:description" content="Relojes hechos a mano, uno por vez, en el banco de un joyero. Entre seis y ocho semanas de trabajo por pieza.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/render-diseno.jpg">
+<link rel="icon" type="image/png" href="assets/logo-escorpion.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Jost:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a class="skip" href="#filosofia">Saltar al contenido</a>
+
+<!-- ============ CABECERA ============ -->
+<header class="site-header" id="top-bar">
+  <a class="brand" href="#inicio" aria-label="Scorpion Atelier, inicio">
+    <span class="brand__mark" aria-hidden="true"></span>
+    <span class="brand__name">Scorpion <em>Atelier</em></span>
+  </a>
+  <nav class="nav" aria-label="Secciones">
+    <a href="#filosofia">Filosofía</a>
+    <a href="#taller">Taller</a>
+    <a href="#contacto" class="nav__cta">Encargos</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- ============ HERO: la mesa de trabajo vista desde arriba ============ -->
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+  <canvas class="hero__wood" id="wood" aria-hidden="true"></canvas>
+  <div class="hero__lamp" aria-hidden="true"></div>
+
+  <div class="bench" id="bench" aria-hidden="true">
+    <!-- Boceto en papel -->
+    <figure class="obj obj--sketch" data-depth="0.4">
+      <svg viewBox="0 0 300 380" class="sketch">
+        <rect x="0" y="0" width="300" height="380" rx="3" fill="#cbbd9f"/>
+        <rect x="0" y="0" width="300" height="380" rx="3" fill="url(#paperGrain)" opacity=".5"/>
+        <g stroke="#5b5146" fill="none" stroke-linecap="round">
+          <path id="sketchWave" stroke-width="1.6" opacity=".85"/>
+          <path id="sketchWave2" stroke-width=".8" opacity=".5"/>
+          <circle cx="132" cy="196" r="22" stroke-width="1" opacity=".7"/>
+          <path d="M150 34 v26 M136 40 l14 -6 l14 6" stroke-width="1" opacity=".55"/>
+          <path d="M40 330 H260" stroke-width=".7" opacity=".4"/>
+          <path d="M60 300 L240 300 M60 296 v8 M240 296 v8" stroke-width=".8" opacity=".55"/>
+        </g>
+        <g fill="#4a4037" font-family="Cinzel, serif" font-size="13" opacity=".8">
+          <text x="138" y="104">XII</text><text x="214" y="160">III</text>
+          <text x="146" y="272">VI</text><text x="64" y="186">IX</text>
+          <text x="120" y="296" font-size="9" font-family="IBM Plex Mono, monospace">Ø 40 mm</text>
+          <text x="40" y="352" font-size="10" font-family="IBM Plex Mono, monospace">N.º 01 · Miyota 8000</text>
+        </g>
+      </svg>
+    </figure>
+
+    <!-- Lupa de relojero -->
+    <figure class="obj obj--loupe" data-depth="1.1">
+      <svg viewBox="0 0 120 120">
+        <defs>
+          <radialGradient id="loupeBody" cx=".35" cy=".3" r=".8">
+            <stop offset="0" stop-color="#3a3532"/><stop offset=".7" stop-color="#15110f"/><stop offset="1" stop-color="#060504"/>
+          </radialGradient>
+          <radialGradient id="loupeGlass" cx=".4" cy=".35" r=".75">
+            <stop offset="0" stop-color="#4b3a26"/><stop offset=".6" stop-color="#1c140d"/><stop offset="1" stop-color="#0a0705"/>
+          </radialGradient>
+        </defs>
+        <circle cx="60" cy="60" r="56" fill="url(#loupeBody)"/>
+        <circle cx="60" cy="60" r="56" fill="none" stroke="#5a524b" stroke-width="1.2" opacity=".6"/>
+        <circle cx="60" cy="60" r="40" fill="#0b0907"/>
+        <circle cx="60" cy="60" r="36" fill="url(#loupeGlass)"/>
+        <ellipse cx="46" cy="44" rx="14" ry="8" fill="#fff4dc" opacity=".22" transform="rotate(-35 46 44)"/>
+        <circle cx="76" cy="78" r="3" fill="#ffd9a0" opacity=".35"/>
+        <g stroke="#2c2622" stroke-width="2" opacity=".9">
+          <path d="M60 6 v6 M60 108 v6 M6 60 h6 M108 60 h6 M22 22 l4 4 M98 98 l-4 -4 M98 22 l-4 4 M22 98 l4 -4"/>
+        </g>
+      </svg>
+    </figure>
+
+    <!-- Pinza de relojero -->
+    <figure class="obj obj--tweezers" data-depth="0.9">
+      <svg viewBox="0 0 44 420">
+        <path d="M19 4 C8 120 6 260 20 416 L21.4 416 C11.5 258 14 130 22.6 8 Z" fill="url(#steel)"/>
+        <path d="M25 4 C36 120 38 260 24 416 L22.6 416 C32.5 258 30 130 21.4 8 Z" fill="url(#steel)"/>
+        <rect x="16" y="0" width="12" height="16" rx="5" fill="url(#steel)"/>
+        <g stroke="#2f3335" stroke-width=".9" opacity=".7">
+          <path d="M9.5 170 h6 M9 178 h6 M9 186 h6 M9 194 h6 M9 202 h6 M9 210 h6"/>
+          <path d="M29 170 h6 M29.5 178 h6 M29.5 186 h6 M29.5 194 h6 M29.5 202 h6 M29.5 210 h6"/>
+        </g>
+      </svg>
+    </figure>
+
+    <!-- Lima de aguja -->
+    <figure class="obj obj--file" data-depth="0.7">
+      <svg viewBox="0 0 30 380">
+        <defs>
+          <pattern id="cut" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+            <rect width="4" height="4" fill="transparent"/><path d="M0 0 V4" stroke="#2a2d2f" stroke-width="1.1" opacity=".55"/>
+          </pattern>
+        </defs>
+        <rect x="6" y="250" width="18" height="128" rx="8" fill="url(#wood-handle)"/>
+        <rect x="9" y="244" width="12" height="12" rx="2" fill="url(#steel)"/>
+        <path d="M11 246 L13.6 6 Q15 0 16.4 6 L19 246 Z" fill="url(#steel)"/>
+        <path d="M11 246 L13.6 6 Q15 0 16.4 6 L19 246 Z" fill="url(#cut)"/>
+      </svg>
+    </figure>
+
+    <!-- Paño verde con tornillos y rubíes -->
+    <figure class="obj obj--pad" data-depth="0.5">
+      <svg viewBox="0 0 160 160">
+        <defs>
+          <radialGradient id="felt" cx=".45" cy=".4" r=".7">
+            <stop offset="0" stop-color="#2f4a35"/><stop offset="1" stop-color="#16251a"/>
+          </radialGradient>
+          <radialGradient id="screw" cx=".35" cy=".35" r=".7">
+            <stop offset="0" stop-color="#f2f2ee"/><stop offset=".6" stop-color="#8f9396"/><stop offset="1" stop-color="#3e4244"/>
+          </radialGradient>
+          <radialGradient id="ruby" cx=".35" cy=".35" r=".7">
+            <stop offset="0" stop-color="#ff9fb3"/><stop offset=".55" stop-color="#b0123a"/><stop offset="1" stop-color="#4b0618"/>
+          </radialGradient>
+        </defs>
+        <circle cx="80" cy="80" r="76" fill="url(#felt)"/>
+        <circle cx="80" cy="80" r="70" fill="none" stroke="#0f1a12" stroke-dasharray="2 3" opacity=".7"/>
+        <g id="screws"></g>
+      </svg>
+    </figure>
+
+    <!-- Bobina de alambre de oro -->
+    <figure class="obj obj--wire" data-depth="0.6">
+      <svg viewBox="0 0 120 120">
+        <g fill="none" stroke="url(#gold)" stroke-width="1.6" id="coil"></g>
+        <path d="M96 66 C110 74 114 92 104 112" fill="none" stroke="url(#gold)" stroke-width="1.6"/>
+      </svg>
+    </figure>
+
+    <!-- Triboulet (mandril para anillos) -->
+    <figure class="obj obj--mandrel" data-depth="0.3">
+      <svg viewBox="0 0 60 440">
+        <path d="M24 6 Q30 0 36 6 L44 300 L16 300 Z" fill="url(#steel)"/>
+        <g stroke="#2c2f31" stroke-width=".8" opacity=".75" id="mandrelMarks"></g>
+        <rect x="18" y="300" width="24" height="136" rx="11" fill="url(#wood-handle)"/>
+      </svg>
+    </figure>
+
+    <!-- Astilla / tablilla del banco con su V -->
+    <figure class="obj obj--pin" data-depth="0">
+      <svg viewBox="0 0 260 150">
+        <defs>
+          <linearGradient id="pinWood" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#6f4826"/><stop offset="1" stop-color="#3d2614"/>
+          </linearGradient>
+        </defs>
+        <path d="M6 150 L18 22 Q20 6 36 6 L224 6 Q240 6 242 22 L254 150 Z" fill="url(#pinWood)"/>
+        <path d="M100 6 L130 92 L160 6 Z" fill="#120c08"/>
+        <path d="M18 22 Q20 6 36 6 L224 6 Q240 6 242 22" fill="none" stroke="#a87a4a" stroke-width="2" opacity=".5"/>
+        <g stroke="#2a1a0e" stroke-width="1" opacity=".5"><path d="M30 60 Q80 70 96 64 M166 70 Q200 62 236 74 M22 110 Q120 120 244 112"/></g>
+      </svg>
+    </figure>
+
+    <!-- El reloj: pieza N.º 01 -->
+    <figure class="obj obj--watch" data-depth="1.5">
+      <img src="assets/reloj.png" width="900" height="656" alt="">
+    </figure>
+  </div>
+
+  <div class="hero__veil" aria-hidden="true"></div>
+
+  <div class="hero__copy">
+    <p class="eyebrow">Relojería Artesanal de Nicho</p>
+    <h1 id="hero-title" class="hero__title">Scorpion<span>Atelier</span></h1>
+    <p class="hero__lead">Relojes hechos a mano, uno por vez, en el banco de un joyero. Cada pieza lleva entre seis y ocho semanas de trabajo.</p>
+    <div class="hero__actions">
+      <a class="btn btn--gold" href="#contacto">Sumarse a la lista de espera</a>
+      <a class="btn btn--ghost" href="#taller">Ver el taller</a>
+    </div>
+  </div>
+
+  <p class="hero__label">
+    <span class="mono">Sobre la mesa</span>
+    Pieza N.º 01. Diseño final de la caja ondulada; la pieza real se está terminando a mano.
+  </p>
+</section>
+
+<!-- ============ FICHA DE LA PIEZA ============ -->
+<section class="spec" aria-label="Ficha de la pieza">
+  <dl class="spec__grid">
+    <div><dt>Movimiento</dt><dd>Miyota serie 8000</dd></div>
+    <div><dt>Caja</dt><dd>Metal en bruto, limado y pulido a mano</dd></div>
+    <div><dt>Dial</dt><dd>Dorado, calado, numerales romanos</dd></div>
+    <div><dt>Tiempo por pieza</dt><dd><span class="num">6–8</span> semanas</dd></div>
+  </dl>
+</section>
+
+<!-- ============ NUESTRA FILOSOFÍA ============ -->
+<section class="philo" id="filosofia" aria-labelledby="philo-title">
+  <div class="wrap philo__grid">
+    <div class="philo__text">
+      <p class="eyebrow">Nuestra filosofía</p>
+      <h2 id="philo-title">De la joyería al tiempo</h2>
+      <p>Scorpion Atelier nace en un taller de joyería. Paulo, su fundador, es joyero de oficio: años de soldar, limar, engastar y pulir metal antes de abrir por primera vez un movimiento mecánico. Ahí encontró una pasión nueva y decidió empezar desde cero, con las mismas herramientas y la misma paciencia.</p>
+      <p>Cada caja se trabaja a mano a partir del metal en bruto. El dial se cala, los numerales romanos se definen uno por uno y el pulido se hace en el banco, sin máquinas de producción. El corazón es un movimiento automático Miyota serie 8000, confiable y fácil de mantener.</p>
+      <p>Por eso cada reloj lleva entre un mes y medio y dos meses. No hay líneas de montaje ni stock: hay una pieza en la mesa hasta que está terminada.</p>
+    </div>
+
+    <aside class="origin" aria-label="El nombre">
+      <div class="origin__date" aria-hidden="true">3<span>·</span>XI</div>
+      <span class="origin__mark" aria-hidden="true"></span>
+      <h3>Scorpion</h3>
+      <p>El 3 de noviembre nació Paulo, el fundador, bajo el signo de escorpio. Esa misma fecha es el Día del Joyero y Relojero. El nombre une las dos cosas.</p>
+      <h3>Atelier</h3>
+      <p>Un taller, no una fábrica. La palabra marca que todo el trabajo es manual y que cada pieza sale de las mismas manos.</p>
+    </aside>
+  </div>
+
+  <div class="wrap">
+    <blockquote class="quote">
+      <p>No buscamos competir con las grandes casas relojeras. Hacemos trabajo de autor: pocas piezas, firmadas por quien las hizo, con las marcas del oficio a la vista.</p>
+    </blockquote>
+  </div>
+
+  <div class="wrap">
+    <h3 class="process__title">Cómo se hace una pieza</h3>
+    <ol class="process">
+      <li><span class="roman">I</span><h4>Boceto y medidas</h4><p>La forma de la caja, el dial y las proporciones se dibujan a mano sobre papel.</p></li>
+      <li><span class="roman">II</span><h4>Caja</h4><p>El metal en bruto se modela, se lima y se ajusta a la medida del movimiento.</p></li>
+      <li><span class="roman">III</span><h4>Dial</h4><p>Calado, relieve de los numerales romanos y acabado dorado.</p></li>
+      <li><span class="roman">IV</span><h4>Pulido</h4><p>Lijas, pastas y paciencia en el banco hasta lograr el brillo buscado.</p></li>
+      <li><span class="roman">V</span><h4>Ensamble</h4><p>Montaje del Miyota serie 8000, agujas y cristal; ajuste y prueba de marcha.</p></li>
+      <li><span class="roman">VI</span><h4>Entrega</h4><p>Control final y entrega en mano o por envío asegurado.</p></li>
+    </ol>
+    <div class="timebar" role="img" aria-label="Duración total por pieza: entre 6 y 8 semanas">
+      <div class="timebar__track">
+        <span class="timebar__fill"></span>
+        <span class="timebar__range"></span>
+      </div>
+      <div class="timebar__scale mono" aria-hidden="true">
+        <span>0</span><span>2</span><span>4</span><span>6</span><span>8 sem.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERÍA DE TALLER ============ -->
+<section class="gallery" id="taller" aria-labelledby="gal-title">
+  <div class="wrap">
+    <div class="gallery__head">
+      <div>
+        <p class="eyebrow">Galería de taller</p>
+        <h2 id="gal-title">El proceso, sin filtros</h2>
+        <p class="lede">Cajas recién salidas del banco, prototipos y el diseño de la primera pieza.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filtrar galería">
+        <button type="button" class="chip is-active" data-filter="todo" aria-pressed="true">Todo</button>
+        <button type="button" class="chip" data-filter="proceso" aria-pressed="false">Proceso</button>
+        <button type="button" class="chip" data-filter="cajas" aria-pressed="false">Cajas</button>
+        <button type="button" class="chip" data-filter="prototipos" aria-pressed="false">Prototipos</button>
+      </div>
+    </div>
+
+    <ul class="grid" id="grid">
+      <li class="tile tile--tall" data-cat="proceso">
+        <button type="button" class="tile__btn" data-type="video" data-src="assets/taller-video.mp4" data-caption="La caja en el banco de trabajo, todavía en metal en bruto.">
+          <video src="assets/taller-video.mp4" poster="assets/taller-dial-en-mano.jpg" muted loop playsinline autoplay preload="metadata"></video>
+          <span class="tile__tag mono">Video · Proceso</span>
+          <span class="tile__cap">La caja en el banco</span>
+        </button>
+      </li>
+      <li class="tile tile--wide" data-cat="prototipos">
+        <button type="button" class="tile__btn" data-type="img" data-src="assets/reloj.png" data-caption="Render de diseño de la pieza N.º 01: caja ondulada, numerales romanos y apertura sobre el volante.">
+          <img class="is-contain" src="assets/reloj.png" alt="Render de la pieza N.º 01 con caja dorada ondulada y numerales romanos" loading="lazy">
+          <span class="tile__tag mono">Prototipos</span>
+          <span class="tile__cap">Diseño de la pieza N.º 01</span>
+        </button>
+      </li>
+      <li class="tile tile--tall" data-cat="cajas">
+        <button type="button" class="tile__btn" data-type="img" data-src="assets/taller-dial-en-mano.jpg" data-caption="Primera caja con el dial presentado. Todavía sin pulir.">
+          <img src="assets/taller-dial-en-mano.jpg" alt="Caja de metal en bruto con dial de numerales romanos, sostenida en la mano" loading="lazy">
+          <span class="tile__tag mono">Cajas</span>
+          <span class="tile__cap">Caja con dial presentado</span>
+        </button>
+      </li>
+      <li class="tile tile--tall" data-cat="prototipos">
+        <button type="button" class="tile__btn" data-type="img" data-src="assets/prototipo-dial.jpg" data-caption="Dial prototipo con el movimiento Miyota serie 8000 visible a través de la apertura.">
+          <img src="assets/prototipo-dial.jpg" alt="Dial dorado prototipo con el movimiento visible a través de una apertura circular" loading="lazy">
+          <span class="tile__tag mono">Prototipos</span>
+          <span class="tile__cap">Dial y movimiento</span>
+        </button>
+      </li>
+      <li class="tile tile--tall" data-cat="cajas">
+        <button type="button" class="tile__btn" data-type="img" data-src="assets/taller-caja-interior.jpg" data-caption="Interior de la caja antes del ajuste del movimiento.">
+          <img src="assets/taller-caja-interior.jpg" alt="Interior de la caja de metal, vista oblicua" loading="lazy">
+          <span class="tile__tag mono">Cajas</span>
+          <span class="tile__cap">Interior de la caja</span>
+        </button>
+      </li>
+      <li class="tile tile--tall" data-cat="proceso">
+        <button type="button" class="tile__btn" data-type="img" data-src="assets/taller-caja-frente.jpg" data-caption="La forma ondulada de la caja, trabajada a mano.">
+          <img src="assets/taller-caja-frente.jpg" alt="Caja ondulada de frente, sobre la palma de la mano" loading="lazy">
+          <span class="tile__tag mono">Proceso</span>
+          <span class="tile__cap">La forma ondulada</span>
+        </button>
+      </li>
+      <li class="tile tile--tall" data-cat="cajas">
+        <button type="button" class="tile__btn" data-type="img" data-src="assets/taller-caja-perfil.jpg" data-caption="Perfil de la caja y asas forjadas.">
+          <img src="assets/taller-caja-perfil.jpg" alt="Perfil lateral de la caja con las asas" loading="lazy">
+          <span class="tile__tag mono">Cajas</span>
+          <span class="tile__cap">Perfil y asas</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Imagen ampliada">
+    <figure class="lightbox__fig">
+      <div class="lightbox__media" id="lb-media"></div>
+      <figcaption id="lb-cap"></figcaption>
+    </figure>
+    <button type="button" class="lb-btn lb-prev" id="lb-prev" aria-label="Anterior">‹</button>
+    <button type="button" class="lb-btn lb-next" id="lb-next" aria-label="Siguiente">›</button>
+    <button type="button" class="lb-btn lb-close" id="lb-close" aria-label="Cerrar">×</button>
+  </dialog>
+</section>
+
+<!-- ============ CONTACTO / LISTA DE ESPERA ============ -->
+<section class="contact" id="contacto" aria-labelledby="contact-title">
+  <div class="wrap contact__grid">
+    <div class="contact__intro">
+      <p class="eyebrow">Encargos</p>
+      <h2 id="contact-title">Lista de espera y consultas</h2>
+      <p>Las piezas se hacen de a una, así que los encargos se toman por orden de llegada. Al sumarse a la lista, el taller avisa cuando se abre un nuevo lugar y coordina los detalles de la pieza.</p>
+      <ul class="facts">
+        <li><span class="mono">Plazo</span> 6 a 8 semanas desde que la pieza entra al banco</li>
+        <li><span class="mono">Producción</span> Una pieza por vez, sin stock</li>
+        <li><span class="mono">Movimiento</span> Miyota serie 8000</li>
+      </ul>
+    </div>
+
+    <form class="form" id="contact-form" novalidate>
+      <div class="field">
+        <label for="f-nombre">Nombre</label>
+        <input id="f-nombre" name="nombre" type="text" autocomplete="name" required>
+        <p class="field__err" id="e-nombre"></p>
+      </div>
+      <div class="field">
+        <label for="f-email">Email</label>
+        <input id="f-email" name="email" type="email" autocomplete="email" required>
+        <p class="field__err" id="e-email"></p>
+      </div>
+      <div class="field">
+        <label for="f-tel">Teléfono o WhatsApp <span class="opt">opcional</span></label>
+        <input id="f-tel" name="telefono" type="tel" autocomplete="tel">
+      </div>
+      <div class="field">
+        <label for="f-tipo">Motivo</label>
+        <select id="f-tipo" name="motivo">
+          <option value="lista-espera">Lista de espera para un encargo</option>
+          <option value="consulta">Consulta general</option>
+          <option value="prensa">Prensa o colaboración</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-muneca">Medida de muñeca <span class="opt">opcional, en cm</span></label>
+        <input id="f-muneca" name="muneca" type="number" min="12" max="25" step="0.5" inputmode="decimal">
+      </div>
+      <div class="field field--full">
+        <label for="f-msg">Mensaje</label>
+        <textarea id="f-msg" name="mensaje" rows="5" placeholder="Qué pieza le interesa, preferencias de metal o cualquier pregunta." required></textarea>
+        <p class="field__err" id="e-msg"></p>
+      </div>
+      <!-- Campo trampa anti‑spam: los humanos no lo ven -->
+      <div class="hp" aria-hidden="true">
+        <label for="f-web">No completar</label>
+        <input id="f-web" name="web" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <div class="field field--full field--check">
+        <input id="f-ok" name="acepta" type="checkbox" required>
+        <label for="f-ok">Acepto que el taller use estos datos solo para responder esta consulta.</label>
+        <p class="field__err" id="e-ok"></p>
+      </div>
+      <div class="field--full form__foot">
+        <button class="btn btn--gold" type="submit" id="f-submit">Enviar</button>
+        <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <a class="brand" href="#inicio" aria-label="Volver al inicio">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span class="brand__name">Scorpion <em>Atelier</em></span>
+    </a>
+    <p class="mono">Relojería artesanal · Hecho a mano · 3 · XI</p>
+    <p class="footer__copy">© <span id="year">2026</span> Scorpion Atelier</p>
+  </div>
+</footer>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="steel" x1="0" x2="1"><stop offset="0" stop-color="#55595c"/><stop offset=".42" stop-color="#e6e9ea"/><stop offset=".58" stop-color="#9da1a4"/><stop offset="1" stop-color="#3f4346"/></linearGradient>
+    <linearGradient id="wood-handle" x1="0" x2="1"><stop offset="0" stop-color="#3b2414"/><stop offset=".45" stop-color="#8a5a32"/><stop offset="1" stop-color="#2e1c10"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6e2a6"/><stop offset=".5" stop-color="#b8862f"/><stop offset="1" stop-color="#6e4e17"/></linearGradient>
+    <filter id="paperGrainF"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4"/><feColorMatrix values="0 0 0 0 .35  0 0 0 0 .3  0 0 0 0 .22  0 0 0 .35 0"/></filter>
+    <pattern id="paperGrain" width="300" height="380" patternUnits="userSpaceOnUse"><rect width="300" height="380" filter="url(#paperGrainF)"/></pattern>
+  </defs>
+</svg>
+
+<script src="js/main.js"></script>
+</body>
+</html>
