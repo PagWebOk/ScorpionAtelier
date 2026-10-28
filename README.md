@@ -27,7 +27,7 @@ Para usar un dominio propio, escribirlo en **Settings → Pages → Custom domai
 
 ## Pendientes antes de publicar en serio
 
-- **Formulario de contacto:** completar `endpoint` en `FORM_CONFIG`, al principio de `js/main.js`, con la URL que recibe las consultas (por ejemplo Formspree: `https://formspree.io/f/XXXXXXXX`). Mientras esté vacío, el formulario valida los datos pero no los envía.
+- **Formulario de contacto:** envía las consultas a paulomel99@icloud.com mediante FormSubmit (`endpoint` en `js/main.js`). La primera consulta dispara un mail de activación que hay que confirmar una sola vez.
 - **Imagen para redes sociales:** en `index.html`, cambiar `og:image` por la URL completa del sitio (por ejemplo `https://scorpionatelier.com/assets/render-diseno.jpg`) para que WhatsApp e Instagram muestren la vista previa.
 - **Textos del proceso:** revisar los seis pasos de "Cómo se hace una pieza" con el proceso real del taller.
 

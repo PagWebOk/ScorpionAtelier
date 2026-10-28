@@ -13,7 +13,7 @@
    Mientras esté vacío, el formulario valida pero no envía.
    --------------------------------------------------------- */
 const FORM_CONFIG = {
-  endpoint: "",
+  endpoint: "https://formsubmit.co/ajax/paulomel99@icloud.com",
   successMessage: "Gracias. La consulta llegó al taller; la respuesta suele tardar dos o tres días.",
   errorMessage: "No se pudo enviar. Revise la conexión e intente de nuevo en unos minutos.",
   previewMessage: "El formulario todavía no está conectado: los datos son válidos, pero no se enviaron.",
@@ -333,6 +333,8 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
     const data = Object.fromEntries(new FormData(form).entries());
     delete data.web;
     data.origen = "scorpion-atelier-web";
+    data._subject = "Nueva consulta desde la web — Scorpion Atelier";
+    data._template = "table";
 
     if (!FORM_CONFIG.endpoint) {
       status.textContent = FORM_CONFIG.previewMessage;
